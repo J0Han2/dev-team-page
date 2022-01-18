@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --FT-Poppins: 'Poppins', sans-serif;
+    --FT-PT-Serif: 'PT Serif', serif;
+    --Black: hsl(0, 0%, 0%);
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    -webkit-box-sizing: inherit;
+}
+
+body {
+    background-color: hsl(0, 0%, 98%);
+    font-family: var(--FT-Poppins);
+}
+
+/*===== **     UTILITYS CLASSES     ** ===== */
+.text-semi-big {
+    font-size: 3.6rem;
+}
+
+.text-normal {
+    font-size: 1.4rem;
+}
+
+/*===== **     MAIN    ** ===== */
+.main {
+    padding: 7rem 2.5rem;
+}
+
+/*===== **     ABOUT    ** ===== */
+.about {
+    margin-bottom: 5rem;
+}
+
+.about__title {
+    font-family: var(--FT-PT-Serif);
+    margin-bottom: 4rem;
+}
+
+.about__subtitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+}
+
+.about__text {
+    line-height: 2.7rem;
+}
+
+/*===== **     USERS    ** ===== */
+.container-users {
+    display: grid;
+    gap: 1rem 2rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.user {
+    position: relative;
+}
+
+.user::after {
+    content: attr(data-job);
+    display: block;
+    font-family: var(--FT-PT-Serif);
+    font-size: 1rem;
+    font-weight: normal;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-transform: uppercase;
+    writing-mode: vertical-lr;
+    width: 5vw;
+}
+
+.user:nth-child(2n+2) {
+    margin-top: 4.5rem;
+}
+
+.user__img {
+    max-width: 85%;
+}
+
+.user__name {
+    font-weight: 600;
+    margin-top: 1.2rem;
+}
+
+/*===== **     M-QUERY-768PX    ** ===== */
+@media screen and (min-width: 768px) {
+    .text-normal {
+        font-size: 1.8rem;
+    }
+
+    /*===== **     MAIN    ** ===== */
+    .main {
+        margin: 0 auto;
+        padding-right: 0;
+        padding-left: 0;
+        width: 75vw;
+    }
+
+    /*===== **     ABOUT    ** ===== */
+    .about {
+        margin-bottom: 8rem;
+        padding-right: 3rem;
+    }
+
+    /*===== **     USERS    ** ===== */
+    .container-users {
+        display: grid;
+        gap: 0;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .user:nth-child(2n+2) {
+        margin-top: 0;
+    }
+
+    .user:nth-child(3n+2) {
+        margin-top: 9rem;
+    }
+
+    .user::after {
+        font-size: 1.2rem;
+    }
+
+    .user__img {
+        max-width: 75%;
+    }
+}
+
+/*===== **     M-QUERY-1000PX    ** ===== */
+
+@media screen and (min-width: 1000px) {
+    .about {
+        display: flex;
+        gap: 6rem;
+        justify-content: space-between;
+        margin-bottom: 8rem;
+        padding-left: 1rem;
+    }
+
+    .about__title {
+        margin-bottom: 0;
+    }
+
+    .about__info {
+        width: 31vw;
+    }
+}
